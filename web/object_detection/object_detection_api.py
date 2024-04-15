@@ -77,6 +77,7 @@ async def process_video(video_model: VideoModel, grpc_manager) -> str | None:
             yield VideoFrame(is_final=True, fps=video_model.fps, video_id=video_model.id)
 
         try:
+            logger.info("正在 RPC 调用预处理视频服务...")
             response_stream = stub.ProcessVideo(request_generator())
             async for response in response_stream:
                 response_frame = np.frombuffer(response.data, dtype=np.uint8)
