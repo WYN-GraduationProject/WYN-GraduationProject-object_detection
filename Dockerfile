@@ -17,6 +17,6 @@ COPY . .
 
 ENV PYTHONPATH="${PYTHONPATH}:./WYN-GraduationProject-common/python_common"
 
-EXPOSE 8002
+EXPOSE 50003
 
 CMD ["python", "object_detection_server.py"]
