@@ -151,5 +151,5 @@ fabric.properties
 
 env
 .idea
-video_data
+video_data/
 /nacos-data/
